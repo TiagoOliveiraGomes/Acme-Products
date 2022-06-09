@@ -1,0 +1,30 @@
+.Container-ShoppingCart {
+    @apply
+    relative
+    flex
+    items-center
+    gap-2
+    cursor-pointer
+    transition-colors
+    hover:text-zinc-200
+}
+
+.sphereCounter {
+    @apply
+    flex
+    w-5
+    h-5
+    justify-center
+    items-center
+    text-center
+    rounded-full
+    bg-red-500
+    text-white
+}
+
+.Container-ShoppingCart span {
+    @apply
+    flex
+    items-center
+    gap-2
+}

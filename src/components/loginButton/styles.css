@@ -1,0 +1,9 @@
+.Container-LoginButton {
+    @apply
+    flex
+    items-center
+    gap-2
+    cursor-pointer
+    transition-colors
+    hover:text-zinc-200
+}
