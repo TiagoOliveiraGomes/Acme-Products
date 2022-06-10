@@ -1,0 +1,13 @@
+.Container-Main {
+    @apply
+    flex
+    justify-center
+    bg-slate-200
+    
+}
+
+.Container-Main section {
+    @apply
+    bg-white
+    w-[80vw]
+}

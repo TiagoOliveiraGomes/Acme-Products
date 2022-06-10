@@ -1,0 +1,22 @@
+.Container-ButtonAddProduct{
+    @apply
+    relative
+    inline-block
+}
+
+.plusSphere {
+    @apply
+    absolute
+    flex
+    h-3
+    w-3
+    top-0
+    right-0
+    bg-slate-800
+    rounded-full
+    justify-center
+    items-center
+    text-white
+    pb-1
+    text-sm
+}

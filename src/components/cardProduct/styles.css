@@ -1,0 +1,27 @@
+.Container-CardProduct {
+    @apply
+    border-2
+    rounded-lg
+    p-3
+    shadow
+}
+.Container-CardProduct main{
+    @apply
+    rounded-lg
+    p-2
+    text-center
+    leading-8
+}
+
+.Container-CardProduct h1 {
+    @apply
+    font-bold
+    text-lg
+}
+
+.Container-CardProduct footer {
+    @apply
+    flex
+    justify-evenly
+    /* bg-red-500 */
+}

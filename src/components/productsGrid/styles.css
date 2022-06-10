@@ -1,0 +1,7 @@
+.Container-ProductsGrid {
+    @apply
+    grid
+    grid-cols-3
+    gap-10
+    p-10
+}
