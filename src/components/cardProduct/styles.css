@@ -23,5 +23,14 @@
     @apply
     flex
     justify-evenly
-    /* bg-red-500 */
+}
+
+.Container-CardProduct footer button {
+    @apply
+    p-1
+    border-2
+    border-transparent
+    rounded
+    transition-colors
+    hover:border-slate-800
 }

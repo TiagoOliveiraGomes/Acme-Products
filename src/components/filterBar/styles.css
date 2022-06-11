@@ -11,7 +11,7 @@
 .Container-FilterBar input{
     @apply
     border-zinc-500
-    w-[50%]
+    w-[40%]
     border-2
     rounded-full
     outline-none
