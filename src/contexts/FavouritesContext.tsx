@@ -4,14 +4,18 @@ import React, { createContext, useState } from "react";
 
 type FavContextProviderProps = {
   children: React.ReactNode;
-};
+}
+type createContextType = {
+  favouriteList: [number] | [];
+  setFavouriteList: React.Dispatch<React.SetStateAction<[number] | []>>
+}
 
 //CreateContext
-const FavContext = createContext<object | null>(null);
+export const FavContext = createContext<createContextType | null>(null);
 
 //Provider
 export function FavContextProvider({ children }: FavContextProviderProps) {
-  const [favouriteList, setFavouriteList] = useState<[number] | null>(null);
+  const [favouriteList, setFavouriteList] = useState<[number] | []>([]);
   return (
     <FavContext.Provider value={{ favouriteList, setFavouriteList }}>
       {children}
