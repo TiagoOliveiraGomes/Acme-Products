@@ -1,18 +1,21 @@
 import { useState } from 'react'
 import { FavContextProvider } from './contexts/FavouritesContext'
 import { CartContextProvider } from './contexts/ShoppingCartContext'
+import { ApiDataProvider } from './contexts/data'
 import Home from './pages/home'
 
 function App() {
 
   return (
-    <CartContextProvider>
-      <FavContextProvider>
-        <div className="App">
-          <Home />
-        </div>
-      </FavContextProvider>
-    </CartContextProvider>
+    <ApiDataProvider>
+      <CartContextProvider>
+        <FavContextProvider>
+          <div className="App">
+            <Home />
+          </div>
+        </FavContextProvider>
+      </CartContextProvider>
+    </ApiDataProvider>
   )
 }
 

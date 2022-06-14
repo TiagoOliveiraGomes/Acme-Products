@@ -1,0 +1,1 @@
+export const description = "Descrição de teste para objeto randomico, com a finalidade de testar o layout do site."
