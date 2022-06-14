@@ -11,10 +11,6 @@ type createCardsProductsProps = {
 export function createCardsProducts (props:string) {
     console.log("o Que tem nas props de CreateCard Products: ", props)
     const apiContext = useContext(ApiDataContext)
-    let adjectivesArray = apiContext?.adjectives
-  
-    const randomArray = adjectivesArray.sort(() => Math.random() - 0.5).slice(0, 50)
-    console.log("Array randomizado: ", apiContext?.verbs);
   
     return(
       apiContext?.verbs
@@ -30,7 +26,7 @@ export function createCardsProducts (props:string) {
       .map((item:{id:number, name:string}, index:number) => {
       return (
         <div key={item.id}>
-          <CardProduct description={description} src={`https://picsum.photos/500/500?random=${item.id}`}  name={item.name + " " + randomArray[index]} />
+          <CardProduct description={description} src={`https://picsum.photos/500/500?random=${item.id}`}  name={item.name + " " + apiContext?.adjectives[item.id]} />
         </div>
       )
     }))

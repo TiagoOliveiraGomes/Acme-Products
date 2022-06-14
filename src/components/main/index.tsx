@@ -4,7 +4,7 @@ import {ProductsGrid} from '../productsGrid'
 import "./styles.css"
 
 export function Main() {
-  const [searchText, setSearchText] = useState<string>('asad')
+  const [searchText, setSearchText] = useState<string>('')
   return (
     <div className='Container-Main'>
       <section>
