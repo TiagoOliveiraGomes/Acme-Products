@@ -16,8 +16,9 @@ export default function Home() {
             let response = await axios.get('./json/api.json')
             let getData = await response.data
             apiContext?.setVerbs( getData.data[0].verbs)
-            apiContext?.setAdjectives(getData.data[0].adjectives)
-            console.log("Dentro da funcao do context: ", getData.data[0].verbs)
+
+            let randomAdjectives = getData.data[0].adjectives.sort(() => Math.random() - 0.5).slice(0, 50)
+            apiContext?.setAdjectives(randomAdjectives)
         } catch (error) {
             console.log(error)
         }
@@ -28,6 +29,7 @@ export default function Home() {
     }
 
 },[])
+
   return (
     <div>{apiContext?.verbs &&
         <div>
