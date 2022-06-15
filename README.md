@@ -35,8 +35,8 @@ O app estará disponível no seu browser pelo endereço http://localhost:3000.
 
 # <h2>💻 Projeto</h2>
 
-O widget é um componente estilizado, que pode ser reutilizado em diversos projetos onde o usuário poderá interagir e enviar notas de feedback para o autor do site.
+Site de produtos com imagens e nomes randomicos.
 
-![Imagem do Widget do app](https://user-images.githubusercontent.com/70171892/167913413-a81ba7c1-7a81-425f-aba5-6cb58540cdf5.png)
+![Foto do site](https://user-images.githubusercontent.com/70171892/173908675-ad1f469a-a068-4660-aa66-ba25df836b53.png)
 
 Feito com 🧡 by Tiago Gomes 👋🏻 
