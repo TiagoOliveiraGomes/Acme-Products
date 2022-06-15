@@ -19,6 +19,7 @@ interface CardProductProps {
 export function CardProduct(props:CardProductProps) {
     const favList = useContext(FavContext)
     const [fillButton, setFillButton] = useState<boolean>(false)
+    const [isChange, setIsChange] = useState<boolean>(false)
     
     function clickToFavItem () {
         let list:any  = favList?.favouriteList
@@ -29,14 +30,12 @@ export function CardProduct(props:CardProductProps) {
                 }
             })
             favList?.setFavouriteList(filtredList)
-            return
+            setIsChange(!isChange)
         }else {
             list?.push(props.id)
-            favList?.setFavouriteList(list)
+            favList?.setFavouriteList(list)   
+            setIsChange(!isChange)
         }
-        
-
-        console.log("Add to Fav List: ", favList?.favouriteList)
     }
 
     useEffect(()=> {
@@ -49,7 +48,7 @@ export function CardProduct(props:CardProductProps) {
             }
         }
         fillButton()
-    },[favList?.favouriteList])
+    },[isChange])
     
   return (
     <div className='Container-CardProduct'>
@@ -62,7 +61,7 @@ export function CardProduct(props:CardProductProps) {
             <h6>R$ {props.value}</h6>
         </main>
         <footer>
-            <ButtonAddProduct />
+            <ButtonAddProduct id={props.id} />
             <button onClick={clickToFavItem}>
                 <Heart size={24} weight={fillButton ? "fill" : "light"} />
             </button>

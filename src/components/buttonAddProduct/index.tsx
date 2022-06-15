@@ -3,12 +3,15 @@ import './styles.css'
 import { ShoppingCartSimple } from 'phosphor-react'
 import { CartContext } from '../../contexts/ShoppingCartContext'
 
-export function ButtonAddProduct() {
+type ButtonAddProductType = {
+  id: number,
+}
+export function ButtonAddProduct(props:ButtonAddProductType) {
   const CartList = useContext(CartContext)
 
   function clickToAddToCart () {
     let list:any  = CartList?.cartList
-    list?.push(1)
+    list?.push(props.id)
     CartList?.setCartList(list)
     console.log("Add in CartList: ", CartList?.cartList)
 }
