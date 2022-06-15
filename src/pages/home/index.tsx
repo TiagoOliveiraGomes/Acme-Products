@@ -4,10 +4,11 @@ import {Footer} from '../../components/footer'
 import {Header} from '../../components/header'
 import {Main} from '../../components/main'
 import { ApiDataContext } from '../../contexts/data'
+import { ForceUpdateProps } from '../../interfaces/forceUpdate'
 
-export default function Home() {
+export default function Home({forceUpdateCartList, setForceUpdateCartList}:ForceUpdateProps) {
   const apiContext = useContext(ApiDataContext)
-  const [forceUpdateCartList, setForceUpdateCartList] = useState<boolean>(false)
+  
 
 // 
   useEffect(()=> {

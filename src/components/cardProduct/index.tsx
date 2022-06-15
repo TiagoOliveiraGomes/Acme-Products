@@ -1,12 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react'
 import './styles.css'
 
-import imgBolsa from '../../assets/images/bolsa.png'
 import {ButtonAddProduct} from '../buttonAddProduct'
 import { Heart } from 'phosphor-react'
 import { FavContext } from '../../contexts/FavouritesContext'
 
-import axios from 'axios'
 
 interface CardProductProps {
     name: string,
@@ -14,7 +12,8 @@ interface CardProductProps {
     description: string,
     value: string
     id: number,
-    setForceUpdateCartList: React.Dispatch<React.SetStateAction<boolean>>
+    setForceUpdateCartList: React.Dispatch<React.SetStateAction<boolean>>,
+    
 }
 
 export function CardProduct(props:CardProductProps) {
@@ -40,6 +39,11 @@ export function CardProduct(props:CardProductProps) {
         }
     }
 
+    const handleClick = () => {
+        // props.history.push('/product');
+        window.location.href = "/product"
+      };
+
     useEffect(()=> {
         function fillButton () {
             let list:any  = favList?.favouriteList
@@ -53,7 +57,8 @@ export function CardProduct(props:CardProductProps) {
     },[isChange])
     
   return (
-    <div className='Container-CardProduct'>
+    <button onClick={handleClick} className='Container-CardProduct'>
+        
         <header>
             <img src={props.src} alt="" />
         </header>
@@ -65,9 +70,9 @@ export function CardProduct(props:CardProductProps) {
         <footer>
             <ButtonAddProduct setForceUpdateCartList={setForceUpdateCartList} id={props.id} />
             <button onClick={clickToFavItem}>
-                <Heart size={24} weight={fillButton ? "fill" : "light"} />
+                <Heart color={fillButton? "#c4483d" : "black"} size={24} weight={fillButton ? "fill" : "light"} />
             </button>
         </footer>
-    </div>
+    </button>
   )
 }

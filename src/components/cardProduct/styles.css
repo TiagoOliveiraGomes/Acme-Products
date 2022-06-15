@@ -12,7 +12,8 @@
 .Container-CardProduct:hover {
     @apply
     scale-110
-    shadow-md
+    shadow-lg
+    shadow-slate-400
     border-slate-400
 }
 .Container-CardProduct main{
