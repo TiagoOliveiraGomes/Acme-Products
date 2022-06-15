@@ -5,7 +5,6 @@
     p-3
     shadow
     transition-all
-    
     duration-500
     cursor-pointer
 }
@@ -44,4 +43,9 @@
     rounded
     transition-colors
     hover:border-slate-800
+}
+
+.Container-CardProduct h6 {
+    @apply
+    text-slate-600
 }

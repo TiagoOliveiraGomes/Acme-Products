@@ -15,7 +15,9 @@ export function Header(props:HeaderProps) {
   const lenght:any = CartsList?.cartList.length
   return (
     <div className='Container-Header'>
-        <h1 onClick={()=> window.location.href = "/"}>ACME</h1>
+        <h1 onClick={()=> {
+          // window.location.href = "/"
+          }}>ACME</h1>
         <div className='OptionsHeader'>
           <ShoppingCart forceUpdate={props.forceUpdateCartList} length={lenght} />
           <LoginButton />

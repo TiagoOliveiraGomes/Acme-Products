@@ -41,7 +41,7 @@ export function CardProduct(props:CardProductProps) {
 
     const handleClick = () => {
         // props.history.push('/product');
-        window.location.href = "/product"
+        // window.location.href = "/product"
       };
 
     useEffect(()=> {
@@ -65,7 +65,7 @@ export function CardProduct(props:CardProductProps) {
         <main>
             <h1>{props.name}</h1>
             <h6>{props.description}</h6> 
-            <h6>R$ {props.value}</h6>
+            <h5>R$ {props.value}</h5>
         </main>
         <footer>
             <ButtonAddProduct setForceUpdateCartList={setForceUpdateCartList} id={props.id} />
