@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import {Footer} from '../../components/footer'
 import {Header} from '../../components/header'
 import {Main} from '../../components/main'
@@ -7,7 +7,7 @@ import { ApiDataContext } from '../../contexts/data'
 
 export default function Home() {
   const apiContext = useContext(ApiDataContext)
-  
+  const [forceUpdateCartList, setForceUpdateCartList] = useState<boolean>(false)
 
 // 
   useEffect(()=> {
@@ -33,8 +33,8 @@ export default function Home() {
   return (
     <div>{apiContext?.verbs &&
         <div>
-          <Header />
-          <Main /> 
+          <Header forceUpdateCartList={forceUpdateCartList} />
+          <Main setForceUpdateCartList={setForceUpdateCartList}/> 
           <Footer />
         </div>
         }

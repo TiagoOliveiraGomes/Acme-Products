@@ -13,13 +13,15 @@ interface CardProductProps {
     src: string,
     description: string,
     value: string
-    id: number
+    id: number,
+    setForceUpdateCartList: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export function CardProduct(props:CardProductProps) {
     const favList = useContext(FavContext)
     const [fillButton, setFillButton] = useState<boolean>(false)
     const [isChange, setIsChange] = useState<boolean>(false)
+    const {setForceUpdateCartList} = props
     
     function clickToFavItem () {
         let list:any  = favList?.favouriteList
@@ -61,7 +63,7 @@ export function CardProduct(props:CardProductProps) {
             <h6>R$ {props.value}</h6>
         </main>
         <footer>
-            <ButtonAddProduct id={props.id} />
+            <ButtonAddProduct setForceUpdateCartList={setForceUpdateCartList} id={props.id} />
             <button onClick={clickToFavItem}>
                 <Heart size={24} weight={fillButton ? "fill" : "light"} />
             </button>

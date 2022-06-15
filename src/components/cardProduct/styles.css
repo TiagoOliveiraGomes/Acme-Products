@@ -4,6 +4,16 @@
     rounded-lg
     p-3
     shadow
+    transition-all
+    
+    duration-500
+    cursor-pointer
+}
+.Container-CardProduct:hover {
+    @apply
+    scale-110
+    shadow-md
+    border-slate-400
 }
 .Container-CardProduct main{
     @apply
