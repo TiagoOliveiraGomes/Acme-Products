@@ -4,13 +4,14 @@ import { createCardsProducts } from "../../util/createProductList";
 
 interface ProductsGridProps {
   searchText: string
+  setForceUpdateCartList: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export function ProductsGrid(props:ProductsGridProps) {
+export function ProductsGrid({searchText, setForceUpdateCartList}:ProductsGridProps) {
 
   return (
     <article className="Container-ProductsGrid">
-      {createCardsProducts(props.searchText)}
+      {createCardsProducts({searchText, setForceUpdateCartList})}
     </article>
   );
 }

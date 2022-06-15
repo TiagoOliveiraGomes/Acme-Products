@@ -13,6 +13,7 @@
 .Container-Header h1 {
     @apply
     text-3xl
+    cursor-pointer
 }
 
 .OptionsHeader {

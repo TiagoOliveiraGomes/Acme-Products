@@ -1,25 +1,26 @@
 import React, { useContext, useEffect, useState } from 'react'
 import './styles.css'
 
-import imgBolsa from '../../assets/images/bolsa.png'
 import {ButtonAddProduct} from '../buttonAddProduct'
 import { Heart } from 'phosphor-react'
 import { FavContext } from '../../contexts/FavouritesContext'
 
-import axios from 'axios'
 
 interface CardProductProps {
     name: string,
     src: string,
     description: string,
     value: string
-    id: number
+    id: number,
+    setForceUpdateCartList: React.Dispatch<React.SetStateAction<boolean>>,
+    
 }
 
 export function CardProduct(props:CardProductProps) {
     const favList = useContext(FavContext)
     const [fillButton, setFillButton] = useState<boolean>(false)
     const [isChange, setIsChange] = useState<boolean>(false)
+    const {setForceUpdateCartList} = props
     
     function clickToFavItem () {
         let list:any  = favList?.favouriteList
@@ -38,6 +39,11 @@ export function CardProduct(props:CardProductProps) {
         }
     }
 
+    const handleClick = () => {
+        // props.history.push('/product');
+        // window.location.href = "/product"
+      };
+
     useEffect(()=> {
         function fillButton () {
             let list:any  = favList?.favouriteList
@@ -51,21 +57,22 @@ export function CardProduct(props:CardProductProps) {
     },[isChange])
     
   return (
-    <div className='Container-CardProduct'>
+    <button onClick={handleClick} className='Container-CardProduct'>
+        
         <header>
             <img src={props.src} alt="" />
         </header>
         <main>
             <h1>{props.name}</h1>
             <h6>{props.description}</h6> 
-            <h6>R$ {props.value}</h6>
+            <h5>R$ {props.value}</h5>
         </main>
         <footer>
-            <ButtonAddProduct id={props.id} />
+            <ButtonAddProduct setForceUpdateCartList={setForceUpdateCartList} id={props.id} />
             <button onClick={clickToFavItem}>
-                <Heart size={24} weight={fillButton ? "fill" : "light"} />
+                <Heart color={fillButton? "#c4483d" : "black"} size={24} weight={fillButton ? "fill" : "light"} />
             </button>
         </footer>
-    </div>
+    </button>
   )
 }

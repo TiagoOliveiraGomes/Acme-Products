@@ -4,6 +4,16 @@
     rounded-lg
     p-3
     shadow
+    transition-all
+    duration-500
+    cursor-pointer
+}
+.Container-CardProduct:hover {
+    @apply
+    scale-110
+    shadow-lg
+    shadow-slate-400
+    border-slate-400
 }
 .Container-CardProduct main{
     @apply
@@ -33,4 +43,9 @@
     rounded
     transition-colors
     hover:border-slate-800
+}
+
+.Container-CardProduct h6 {
+    @apply
+    text-slate-600
 }

@@ -1,11 +1,12 @@
 import axios from 'axios'
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import {Footer} from '../../components/footer'
 import {Header} from '../../components/header'
 import {Main} from '../../components/main'
 import { ApiDataContext } from '../../contexts/data'
+import { ForceUpdateProps } from '../../interfaces/forceUpdate'
 
-export default function Home() {
+export default function Home({forceUpdateCartList, setForceUpdateCartList}:ForceUpdateProps) {
   const apiContext = useContext(ApiDataContext)
   
 
@@ -33,8 +34,8 @@ export default function Home() {
   return (
     <div>{apiContext?.verbs &&
         <div>
-          <Header />
-          <Main /> 
+          <Header forceUpdateCartList={forceUpdateCartList} />
+          <Main setForceUpdateCartList={setForceUpdateCartList}/> 
           <Footer />
         </div>
         }
