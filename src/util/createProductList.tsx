@@ -24,9 +24,12 @@ export function createCardsProducts (props:string) {
       })
 
       .map((item:{id:number, name:string}, index:number) => {
+        let fullName = item.name + " " + apiContext?.adjectives[item.id]
+        let calculatePrice = Math.abs(10 + fullName.length * ((500 - description.length) / (3 - fullName.length))) 
+        let value = `${calculatePrice.toFixed(2)}`
       return (
         <div key={item.id}>
-          <CardProduct description={description} src={`https://picsum.photos/500/500?random=${item.id}`}  name={item.name + " " + apiContext?.adjectives[item.id]} />
+          <CardProduct id={item.id} value={value} description={description} src={`https://picsum.photos/500/500?random=${item.id}`}  name={fullName} />
         </div>
       )
     }))
